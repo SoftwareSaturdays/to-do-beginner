@@ -1,0 +1,20 @@
+html {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+
+.todo-item-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.button {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 2px;
+    font-weight: bold;
+}
