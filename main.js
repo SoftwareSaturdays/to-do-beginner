@@ -44,7 +44,7 @@ Vue.component('todo-item', {
     },
     template: `
     <div class="todo-item-wrapper">
-        <div class="button button-done" v-on:click="">Done!</div>
+        <div class="button button-done" v-on:click="done_todo">Done!</div>
         <div class="todo-item-text-wrapper">
             <input v-if="edit" v-model="todo.text" class="todo-item-text-interior"/>
             <div v-if="!edit" class="todo-item-text-interior">{{todo.text}}</div>
@@ -64,9 +64,22 @@ Vue.component('todo-item', {
         save_todo: function() {
             this.edit = false;
             this.$emit('edit', this.todo.id);
+        },
+        done_todo: function() {
+            this.$emit('done', this.todo.id);
         }
     },
 });
+
+// To-do finished
+Vue.component('todo-finished', {
+    props: ['todo'],
+    template: `
+    <div class="todo-finished-wrapper">
+        {{todo.text}}
+    </div>
+    `,
+})
 
 const vm = new Vue({
     el: '#app',
@@ -76,7 +89,11 @@ const vm = new Vue({
             {id: 1, text: 'Make slides for Software Saturday'},
             {id: 2, text: 'Teach VueJS'},
         ],
+        finished_todo: [
+
+        ],
         next_todo_id: 3,
+        next_finished_id: 0,
     },
     methods: {
         new_todo: function(newTodo) {
@@ -94,7 +111,23 @@ const vm = new Vue({
             // Edit the database here...
         },
         handle_edit: function(toUpdate) {
+            let index = -1;
+            this.todolist.forEach(element => {
+                if(element.id == toUpdate)
+                    index = this.todolist.indexOf(element);
+            });
             // Edit the database here...
+        },
+        handle_done: function(toFinish) {
+            let index = -1;
+            this.todolist.forEach(element => {
+                if(element.id == toFinish)
+                    index = this.todolist.indexOf(element);
+            });
+            this.finished_todo.push({id:this.next_finished_id, text:this.todolist[index].text});
+            // Edit the database here...
+            this.next_finished_id++;
+            this.todolist.splice(index, 1);
         },
     },
 });
