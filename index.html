@@ -14,13 +14,8 @@
   <body>
     <div id="app">
       <h1>To Do App</h1>
-
-
-
-
-      
       <todo-list v-on:add='new_todo'>
-        <todo-item v-for="item in todolist" v-bind:key="item.id" v-bind:todo="item"></todo-item>
+        <todo-item v-for="item in todolist" v-bind:key="item.id" v-bind:todo="item" v-on:delete='handle_delete' v-on:edit='handle_edit'></todo-item>
       </todo-list>
     </div>
   </body>
