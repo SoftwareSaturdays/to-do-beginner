@@ -1,20 +1,88 @@
+/* GLOBAL STYLES */
 html {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
 }
 
+a {
+    color: gray;
+}
+
+a:hover {
+    color: darkgray;
+}
+
+/* todo-list STYLES */
+.todo-list-wrapper {
+    width: 40%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* todo-item STYLES */
 .todo-item-wrapper {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    border: 2px solid gray;
+    margin: 10px;
+    padding: 5px;
 }
 
+.todo-item-text-wrapper {
+    width: 40%;
+    text-align: left;
+}
+
+.todo-item-text-interior {
+    width: 90%;
+    padding-left: 10px;
+}
+
+/* BUTTON STYLES */
 .button {
     border: 1px solid black;
-    padding: 5px;
-    margin: 3px;
-    border-radius: 2px;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 3px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.button-done {
+    color: #48b526;
+}
+
+.button-done:hover {
+    background-color: #48b526;
+    color: white;
+    border: 1px solid white;
+}
+
+.button-edit:hover {
+    background-color: #407fc2;
+    color: white;
+    border: 1px solid white;
+}
+
+.button-delete {
+    color: #bf2c2c;
+}
+
+.button-delete:hover {
+    background-color: #bf2c2c;
+    color: white;
+    border: 1px solid white;
+}
+
+.button-add {
+    color: #8936b3;
+}
+
+.button-add:hover {
+    background-color: #8936b3;
+    color: white;
+    border: 1px solid white;
 }

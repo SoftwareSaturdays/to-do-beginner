@@ -6,12 +6,14 @@ Vue.component('todo-list', {
         }
     },
     template: `
-    <div>
+    <div class="todo-list-wrapper">
         <slot></slot>
         <br />
-        <input v-model="next_todo_txt" placeholder="New ToDo...">
-        <div class="button" v-on:click="new_todo">
-            Add
+        <div class="todo-item-wrapper">
+            <input v-model="next_todo_txt" placeholder="New ToDo...">
+            <div class="button button-add" v-on:click="new_todo">
+                Add
+            </div>
         </div>
         <div v-if="blank">
             Please enter a To-Do task.
@@ -42,12 +44,14 @@ Vue.component('todo-item', {
     },
     template: `
     <div class="todo-item-wrapper">
-        <div class="button" v-on:click="">Done!</div>
-        <input v-if="edit" v-model="todo.text" />
-        <div v-if="!edit">{{todo.text}}</div>
-        <div v-if="!edit" class="button" v-on:click="edit_todo">Edit</div>
-        <div v-if="edit" class="button" v-on:click="save_todo">Save</div>
-        <div class="button" v-on:click="delete_todo">Delete</div>
+        <div class="button button-done" v-on:click="">Done!</div>
+        <div class="todo-item-text-wrapper">
+            <input v-if="edit" v-model="todo.text" class="todo-item-text-interior"/>
+            <div v-if="!edit" class="todo-item-text-interior">{{todo.text}}</div>
+        </div>
+        <div v-if="edit" class="button button-edit" v-on:click="save_todo">Save</div>
+        <div v-if="!edit" class="button button-edit" v-on:click="edit_todo">Edit</div>
+        <div class="button button-delete" v-on:click="delete_todo">Delete</div>
     </div>
     `,
     methods: {
