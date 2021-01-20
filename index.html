@@ -18,12 +18,12 @@
       <h3>For more information, visit our <a href="https://purdueieee.org/software">website</a>.</h3>
       <hr />
       <h3>Current To-Do List</h3>
-      <todo-list v-on:add='new_todo'>
-        <todo-item v-for="item in todolist" v-bind:key="item.id" v-bind:todo="item" v-on:delete='handle_delete' v-on:edit='handle_edit' v-on:done="handle_done"></todo-item>
+      <todo-list v-on:add="new_todo">
+        <todo-item v-for="item in todolist" v-bind:key="item.id" v-bind:todo="item" v-on:delete="handle_delete" v-on:edit="handle_edit" v-on:done="handle_done"></todo-item>
       </todo-list>
       <hr />
       <h3>Finished To-Do List</h3>
-      <todo-finished v-for="item in finished_todo" v-bind:key="item.id" v-bind:todo="item"></todo-finished>
+      <todo-finished v-for="item in finished_todo" v-bind:key="item.id" v-bind:todo="item" v-on:delete="finished_handle_delete" v-on:restore="new_todo"></todo-finished>
     </div>
   </body>
 

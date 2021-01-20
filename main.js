@@ -76,9 +76,22 @@ Vue.component('todo-finished', {
     props: ['todo'],
     template: `
     <div class="todo-finished-wrapper">
-        {{todo.text}}
+        <div class="button button-edit"v-on:click="restore_todo">Restore</div>
+        <div class="todo-finished-text-wrapper">    
+            {{todo.text}}
+        </div>
+        <div class="button button-delete" v-on:click="delete_todo">Delete</div>
     </div>
     `,
+    methods: {
+        delete_todo: function() {
+            this.$emit('delete', this.todo.id);
+        },
+        restore_todo: function() {
+            this.$emit('restore', this.todo.text);
+            this.$emit('delete', this.todo.id);
+        }
+    }
 })
 
 const vm = new Vue({
@@ -128,6 +141,15 @@ const vm = new Vue({
             // Edit the database here...
             this.next_finished_id++;
             this.todolist.splice(index, 1);
+        },
+        finished_handle_delete: function(toDelete) {
+            let index = -1;
+            this.finished_todo.forEach(element => {
+                if(element.id == toDelete)
+                    index = this.todolist.indexOf(element);
+            });
+            this.finished_todo.splice(index, 1);
+            // Edit the database here...
         },
     },
 });
