@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
 
-    <title>To-Do App</title>
+    <title>ToDo App - Beginner</title>
   </head>
 
   <body>
     <div id="app">
-      <h1>To Do App</h1>
-      <h3>A VueJS app built for Software Saturdays Spring 2021.</h3>
+      <h1>ToDo App - Beginner</h1>
+      <h3>A VueJS app built for Software Saturdays Fall 2021.</h3>
       <h3>For more information, visit our <a href="https://purdueieee.org/software">website</a>.</h3>
       <hr />
       <h3>Current To-Do List</h3>
@@ -23,7 +23,9 @@
       </todo-list>
       <hr />
       <h3>Finished To-Do List</h3>
-      <todo-finished v-for="item in finished_todo" v-bind:key="item.id" v-bind:todo="item" v-on:delete="finished_handle_delete" v-on:restore="new_todo"></todo-finished>
+      <div class="todo-list-wrapper">
+        <todo-finished v-for="item in finished_todo" v-bind:key="item.id" v-bind:todo="item" v-on:delete="finished_handle_delete" v-on:restore="new_todo"></todo-finished>
+      </div>
     </div>
   </body>
 
