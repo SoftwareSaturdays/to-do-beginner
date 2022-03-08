@@ -1,1 +1,155 @@
-const _0x3fab=['restore','indexOf','next_todo_txt','589633XhMYIR','769Zfiyke','Make\x20slides\x20for\x20Software\x20Saturday','next_todo_id','Teach\x20VueJS','todo','678442edeJrq','#app','todo-finished','273359HKEgOn','done','15YrAztz','3THaweO','delete','44385SoGviQ','splice','876492cZgsNe','component','next_finished_id','push','1719iegJkc','finished_todo','Finish\x20this\x20website','$emit','text','todo-item','todo-list','18cwNMCM','todolist','forEach','17547XFLJse','edit'];const _0x4eb8=function(_0x3a9fde,_0x53d447){_0x3a9fde=_0x3a9fde-0xd9;let _0x3fab9d=_0x3fab[_0x3a9fde];return _0x3fab9d;};const _0x4106ec=_0x4eb8;(function(_0x7a9491,_0x518cc4){const _0x3c94cc=_0x4eb8;while(!![]){try{const _0x3f1665=parseInt(_0x3c94cc(0xe7))*parseInt(_0x3c94cc(0xfa))+parseInt(_0x3c94cc(0xe2))+-parseInt(_0x3c94cc(0xec))+parseInt(_0x3c94cc(0xe5))*parseInt(_0x3c94cc(0xe8))+-parseInt(_0x3c94cc(0xea))*-parseInt(_0x3c94cc(0xf7))+-parseInt(_0x3c94cc(0xdd))*parseInt(_0x3c94cc(0xf0))+parseInt(_0x3c94cc(0xdc));if(_0x3f1665===_0x518cc4)break;else _0x7a9491['push'](_0x7a9491['shift']());}catch(_0x136179){_0x7a9491['push'](_0x7a9491['shift']());}}}(_0x3fab,0xe864c),Vue['component'](_0x4106ec(0xf6),{'data':function(){return{'next_todo_txt':''};},'template':'\x0a\x20\x20\x20\x20<div\x20class=\x22todo-list-wrapper\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<slot></slot>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<br\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22todo-item-wrapper\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20v-model=\x22next_todo_txt\x22\x20placeholder=\x22New\x20ToDo...\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22button\x20button-add\x22\x20v-on:click=\x22new_todo\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Add\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20v-if=\x22blank\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Please\x20enter\x20a\x20To-Do\x20task.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','methods':{'new_todo':function(){const _0x5dbd4d=_0x4106ec;if(this['blank'])return;this[_0x5dbd4d(0xf3)]('add',this[_0x5dbd4d(0xdb)]),this[_0x5dbd4d(0xdb)]='';}},'computed':{'blank':function(){const _0x43daa7=_0x4106ec;return this[_0x43daa7(0xdb)]=='';}}}),Vue[_0x4106ec(0xed)](_0x4106ec(0xf5),{'props':['todo'],'data':function(){return{'edit':![]};},'template':'\x0a\x20\x20\x20\x20<div\x20class=\x22todo-item-wrapper\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22button\x20button-done\x22\x20v-on:click=\x22done_todo\x22>Done!</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22todo-item-text-wrapper\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20v-if=\x22edit\x22\x20v-model=\x22todo.text\x22\x20class=\x22todo-item-text-interior\x22/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20v-if=\x22!edit\x22\x20class=\x22todo-item-text-interior\x22>{{todo.text}}</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20v-if=\x22edit\x22\x20class=\x22button\x20button-edit\x22\x20v-on:click=\x22save_todo\x22>Save</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20v-if=\x22!edit\x22\x20class=\x22button\x20button-edit\x22\x20v-on:click=\x22edit_todo\x22>Edit</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22button\x20button-delete\x22\x20v-on:click=\x22delete_todo\x22>Delete</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','methods':{'delete_todo':function(){const _0x432bb9=_0x4106ec;this[_0x432bb9(0xf3)](_0x432bb9(0xe9),this[_0x432bb9(0xe1)]['id']);},'edit_todo':function(){const _0x51a3db=_0x4106ec;this[_0x51a3db(0xfb)]=!![];},'save_todo':function(){const _0x5aa278=_0x4106ec;this[_0x5aa278(0xfb)]=![],this[_0x5aa278(0xf3)](_0x5aa278(0xfb),this[_0x5aa278(0xe1)]['id']);},'done_todo':function(){const _0x145f14=_0x4106ec;this['$emit'](_0x145f14(0xe6),this[_0x145f14(0xe1)]['id']);}}}),Vue[_0x4106ec(0xed)](_0x4106ec(0xe4),{'props':[_0x4106ec(0xe1)],'template':'\x0a\x20\x20\x20\x20<div\x20class=\x22todo-finished-wrapper\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22button\x20button-edit\x22v-on:click=\x22restore_todo\x22>Restore</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22todo-finished-text-wrapper\x22>\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20{{todo.text}}\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22button\x20button-delete\x22\x20v-on:click=\x22delete_todo\x22>Delete</div>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','methods':{'delete_todo':function(){const _0x150fe1=_0x4106ec;this[_0x150fe1(0xf3)](_0x150fe1(0xe9),this[_0x150fe1(0xe1)]['id']);},'restore_todo':function(){const _0x52dfc1=_0x4106ec;this[_0x52dfc1(0xf3)](_0x52dfc1(0xd9),this['todo'][_0x52dfc1(0xf4)]),this[_0x52dfc1(0xf3)](_0x52dfc1(0xe9),this[_0x52dfc1(0xe1)]['id']);}}}));const vm=new Vue({'el':_0x4106ec(0xe3),'data':{'todolist':[{'id':0x0,'text':_0x4106ec(0xf2)},{'id':0x1,'text':_0x4106ec(0xde)},{'id':0x2,'text':_0x4106ec(0xe0)}],'finished_todo':[],'next_todo_id':0x3,'next_finished_id':0x0},'methods':{'new_todo':function(_0x3401ac){const _0x54ca70=_0x4106ec;this['todolist'][_0x54ca70(0xef)]({'id':this[_0x54ca70(0xdf)],'text':_0x3401ac}),this[_0x54ca70(0xdf)]++;},'handle_delete':function(_0x1cde51){const _0x56dfd0=_0x4106ec;let _0x1fe2d7=-0x1;this['todolist']['forEach'](_0x4fbd08=>{const _0x5797a7=_0x4eb8;if(_0x4fbd08['id']==_0x1cde51)_0x1fe2d7=this['todolist'][_0x5797a7(0xda)](_0x4fbd08);}),this['todolist'][_0x56dfd0(0xeb)](_0x1fe2d7,0x1);},'handle_edit':function(_0x3f9159){const _0x284500=_0x4106ec;let _0x3c5434=-0x1;this[_0x284500(0xf8)][_0x284500(0xf9)](_0x588c64=>{const _0xff331b=_0x284500;if(_0x588c64['id']==_0x3f9159)_0x3c5434=this['todolist'][_0xff331b(0xda)](_0x588c64);});},'handle_done':function(_0x29e578){const _0x3aa6c7=_0x4106ec;let _0x53ab75=-0x1;this[_0x3aa6c7(0xf8)]['forEach'](_0xc2a114=>{const _0x28aba9=_0x3aa6c7;if(_0xc2a114['id']==_0x29e578)_0x53ab75=this[_0x28aba9(0xf8)]['indexOf'](_0xc2a114);}),this[_0x3aa6c7(0xf1)][_0x3aa6c7(0xef)]({'id':this[_0x3aa6c7(0xee)],'text':this['todolist'][_0x53ab75]['text']}),this[_0x3aa6c7(0xee)]++,this[_0x3aa6c7(0xf8)][_0x3aa6c7(0xeb)](_0x53ab75,0x1);},'finished_handle_delete':function(_0x1ad426){const _0x187a14=_0x4106ec;let _0x508aef=-0x1;this['finished_todo'][_0x187a14(0xf9)](_0x500396=>{const _0xba5ca2=_0x187a14;if(_0x500396['id']==_0x1ad426)_0x508aef=this[_0xba5ca2(0xf8)][_0xba5ca2(0xda)](_0x500396);}),this[_0x187a14(0xf1)][_0x187a14(0xeb)](_0x508aef,0x1);}}});
+// To-do list
+Vue.component('todo-list', {
+    data: function() {
+        return {
+            next_todo_txt: '',
+        }
+    },
+    template: `
+    <div class="todo-list-wrapper">
+        <slot></slot>
+        <br />
+        <div class="todo-item-wrapper">
+            <input v-model="next_todo_txt" placeholder="New ToDo...">
+            <div class="button button-add" v-on:click="new_todo">
+                Add
+            </div>
+        </div>
+        <div v-if="blank">
+            Please enter a To-Do task.
+        </div>
+    </div>
+    `,
+    methods: {
+        new_todo: function() {
+            if(this.blank) return;
+            this.$emit('add', this.next_todo_txt);
+            this.next_todo_txt = '';
+        },
+    },
+    computed: {
+        blank: function(){
+            return this.next_todo_txt == '';
+        }
+    },
+})
+
+// To-do item
+Vue.component('todo-item', {
+    props: ['todo'],
+    data: function() {
+        return {
+            edit: false,
+        }
+    },
+    template: `
+    <div class="todo-item-wrapper">
+        <div class="button button-done" v-on:click="done_todo">Done!</div>
+        <div class="todo-item-text-wrapper">
+            <input v-if="edit" v-model="todo.text" class="todo-item-text-interior"/>
+            <div v-if="!edit" class="todo-item-text-interior">{{todo.text}}</div>
+        </div>
+        <div v-if="edit" class="button button-edit" v-on:click="save_todo">Save</div>
+        <div v-if="!edit" class="button button-edit" v-on:click="edit_todo">Edit</div>
+        <div class="button button-delete" v-on:click="delete_todo">Delete</div>
+    </div>
+    `,
+    methods: {
+        delete_todo: function() {
+            this.$emit('delete', this.todo.id);
+        },
+        edit_todo: function() {
+            this.edit = true;
+        },
+        save_todo: function() {
+            this.edit = false;
+            this.$emit('edit', this.todo.id);
+        },
+        done_todo: function() {
+            this.$emit('done', this.todo.id);
+        }
+    },
+});
+
+// To-do finished
+Vue.component('todo-finished', {
+    props: ['todo'],
+    template: `
+    <div class="todo-finished-wrapper">
+        <div class="button button-edit"v-on:click="restore_todo">Restore</div>
+        <div class="todo-finished-text-wrapper">    
+            {{todo.text}}
+        </div>
+        <div class="button button-delete" v-on:click="delete_todo">Delete</div>
+    </div>
+    `,
+    methods: {
+        delete_todo: function() {
+            this.$emit('delete', this.todo.id);
+        },
+        restore_todo: function() {
+            this.$emit('restore', this.todo.text);
+            this.$emit('delete', this.todo.id);
+        }
+    }
+})
+
+const vm = new Vue({
+    el: '#app',
+    data: {
+        todolist: [
+            {id: 0, text: 'Finish this website'},
+            {id: 1, text: 'Make slides for Software Saturday'},
+            {id: 2, text: 'Teach VueJS'},
+        ],
+        finished_todo: [
+
+        ],
+        next_todo_id: 3,
+        next_finished_id: 0,
+    },
+    methods: {
+        new_todo: function(newTodo) {
+            this.todolist.push({id:this.next_todo_id, text:newTodo});
+            // Edit the database here...
+            this.next_todo_id++;
+        },
+        handle_delete: function(toDelete) {
+            let index = -1;
+            this.todolist.forEach(element => {
+                if(element.id == toDelete)
+                    index = this.todolist.indexOf(element);
+            });
+            this.todolist.splice(index, 1);
+            // Edit the database here...
+        },
+        handle_edit: function(toUpdate) {
+            let index = -1;
+            this.todolist.forEach(element => {
+                if(element.id == toUpdate)
+                    index = this.todolist.indexOf(element);
+            });
+            // Edit the database here...
+        },
+        handle_done: function(toFinish) {
+            let index = -1;
+            this.todolist.forEach(element => {
+                if(element.id == toFinish)
+                    index = this.todolist.indexOf(element);
+            });
+            this.finished_todo.push({id:this.next_finished_id, text:this.todolist[index].text});
+            // Edit the database here...
+            this.next_finished_id++;
+            this.todolist.splice(index, 1);
+        },
+        finished_handle_delete: function(toDelete) {
+            let index = -1;
+            this.finished_todo.forEach(element => {
+                if(element.id == toDelete)
+                    index = this.todolist.indexOf(element);
+            });
+            this.finished_todo.splice(index, 1);
+            // Edit the database here...
+        },
+    },
+});
